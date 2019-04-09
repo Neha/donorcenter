@@ -4,7 +4,11 @@
   "description": "CLI to get long/lat of the donar based on the pincode",
   "main": "index.js",
   "scripts": {
+    "start-cli": "node ./cli.js",
     "test": "jest --coverage"
+  },
+  "bin": {
+    "donor-center": "./cli.js"
   },
   "author": "Neha Sharma",
   "license": "ISC",

@@ -7,7 +7,7 @@ const Table = require('cli-table');
 
 const printProjectTable = data => {
   const table = new Table({
-    head: ['Titlee', 'Location'],
+    head: ['Title', 'Location'],
     colWidths: [30, 120]
   });
   for (let index = 0; index < data.length; index++) {

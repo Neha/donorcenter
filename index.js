@@ -24,13 +24,23 @@ const showMenuOptions = () => {
   return printMenuList().then(handler);
 };
 
-const main = (function() {
+const main = function(args) {
   InitData().then(function(donors) {
     console.log(chalk.blue(content.welcome));
     console.log(chalk.blue(`You have #${donors.length} donors in the system.`));
     // Start the flow based on Donors count.
-    donors.length > 0 ? showMenuOptions() : registerDonor();
+    switch (args) {
+      case 'list':
+        printUsersList();
+        break;
+      case 'add':
+        registerDonor();
+        break;
+      default:
+        donors.length > 0 ? showMenuOptions() : registerDonor();
+        break;
+    }
   });
-})();
+};
 
 module.exports = main;

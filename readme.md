@@ -1,38 +1,66 @@
 # Welcome to Donors Center CLI :computer:
 
 **Welcome to the Donors Center' CLI**
-This CLI is based on Nodejs .It lets you **register** the new donor , **list** all registered donors , **select the doner** and get the **Google Place link** of the selected donor.
+Are you looking for places to do donation? You want to help the people in need and make them reach to needful? Then this Donor city is the CLI for you.
+Donor city lets you **register** the new donor , **list** all registered donors , **select the doner** and get the **Google Place link** of the selected donor.
 
 # Tech Stack
 
 - nodejs
 - inquire - For Interactive terminal
-- chalk - For colorful text
-- table
-- jest
+- chalk - For colorful content
+- table - For formatting the data
+- jest - For test cases
 - eslint
 - prettier
+- commander
 
-# Folder Structure
+| Packages  | Link                                      |
+| --------- | ----------------------------------------- |
+| table     | [https://www.npmjs.com/package/table      |
+| chalk     | [https://www.npmjs.com/package/chalk]     |
+| inquire   | [https://www.npmjs.com/package/inquirer   |
+| commander | [https://www.npmjs.com/package/commander] |
 
-- /commands
-- /data
-- /service
-- /controller
-  index.js
+# How to Start
 
-# How to use
+### Method 1 :
 
-node index.js
+    node cli.js
+    node cli.js --add
+    node cli.js --list
 
 ## options
 
-All your files are listed in the file explorer. You can switch from one to another by clicking a file in the list.
+### Add a donor
 
-## content
+    node cli.js --add
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+### List all registered donors
 
-## config
+    node cli.js --list
 
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+### Select a registered donor
+
+    node cli.js --list
+
+## How to change the config(s)
+
+To **change/update the API Key(s)** of Google Place or Donor's city
+
+    config/congif.js
+
+## How to change the content
+
+To **add/edit** the content of the CLI
+
+config/content.js
+
+### Development
+
+Want to contribute? Great! email to nsharma215@gmail.com
+
+### Todos
+
+- Filter of projects
+- More options to sort

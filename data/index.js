@@ -23,7 +23,6 @@ module.exports = (() => {
         setDonors(JSON.parse(registeredDonorsList));
         resolve(registeredDonors);
       }
-
       resolve(registeredDonors);
     });
 
