@@ -2,10 +2,9 @@ const fs = require('fs');
 const chalk = require('chalk');
 const config = require('../config/config');
 const zipCodeService = require('../service/zipcode');
-const getSelectDonor = require('../commands/getSelectDonor');
+const getSelectDonor = require('../queries/get-selected-donor');
 const Table = require('cli-table');
 const path = require('path');
-const filepath = path.resolve(__dirname, 'registeredusers.json');
 
 const printProjectTable = data => {
   const table = new Table({
@@ -36,7 +35,7 @@ const getProposalList = async zipcode => {
 };
 
 const printUsersList = () => {
-  if (fs.existsSync(filepath)) {
+  if (fs.existsSync('registeredusers.json')) {
     let content = fs.readFileSync('registeredusers.json');
     content = JSON.parse(content);
 
@@ -47,6 +46,8 @@ const printUsersList = () => {
     getSelectDonor(names).then(zipcode => {
       getProposalList(zipcode);
     });
+  } else {
+    console.log(chalk.red('You need to register atleast 1 donor!!'));
   }
 };
 

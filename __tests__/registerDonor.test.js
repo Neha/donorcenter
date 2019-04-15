@@ -1,4 +1,4 @@
-const registerDonors = require('../commands/registerDonors');
+const registerDonors = require('../queries/register-donors');
 const inquirer = require('inquirer');
 
 jest.mock('inquirer');

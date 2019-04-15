@@ -1,12 +1,11 @@
 const { init: InitData } = require('./data');
 const { printUsersList } = require('./view');
-const printMenuList = require('./commands/printMenuList');
-const registerDonors = require('./commands/registerDonors');
+const printMenuList = require('./queries/print-menu-list');
+const registerDonors = require('./queries/register-donors');
 const chalk = require('chalk');
 const content = require('./config/content');
 
 const handler = response => {
-  console.log(response);
   if (response === 1) {
     registerDonor();
   } else {
