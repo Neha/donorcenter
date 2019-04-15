@@ -4,6 +4,8 @@ const config = require('../config/config');
 const zipCodeService = require('../service/zipcode');
 const getSelectDonor = require('../commands/getSelectDonor');
 const Table = require('cli-table');
+const path = require('path');
+const filepath = path.resolve(__dirname, 'registeredusers.json');
 
 const printProjectTable = data => {
   const table = new Table({
@@ -34,16 +36,18 @@ const getProposalList = async zipcode => {
 };
 
 const printUsersList = () => {
-  let content = fs.readFileSync('registeredusers.json');
-  content = JSON.parse(content);
+  if (fs.existsSync(filepath)) {
+    let content = fs.readFileSync('registeredusers.json');
+    content = JSON.parse(content);
 
-  const names = content.map(item => {
-    return item.first_name;
-  });
+    const names = content.map(item => {
+      return item.first_name;
+    });
 
-  getSelectDonor(names).then(zipcode => {
-    getProposalList(zipcode);
-  });
+    getSelectDonor(names).then(zipcode => {
+      getProposalList(zipcode);
+    });
+  }
 };
 
 module.exports = {
