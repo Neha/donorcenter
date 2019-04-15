@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const Main = require('./index');
+const Main = require('./main');
 const program = require('commander');
 
 program
