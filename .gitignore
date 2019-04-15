@@ -4,10 +4,13 @@ logs
 npm-debug.log*
 
 # Coverage directory used by tools like istanbul
-/coverage
+coverage
 
 # Dependency directories
-node_modules/
+node_modules
+
+# Others
+registeredUsers.json
 
 
 
