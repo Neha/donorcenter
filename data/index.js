@@ -1,4 +1,6 @@
 const fs = require('fs');
+const path = require('path');
+const filepath = path.resolve(__dirname, 'registeredusers.json');
 
 module.exports = (() => {
   const registeredDonors = [];
@@ -13,6 +15,10 @@ module.exports = (() => {
       registeredDonors.push(item);
     });
     fs.writeFileSync('registeredusers.json', JSON.stringify(registeredDonors));
+    return registeredDonors;
+  };
+
+  const getDonors = () => {
     return registeredDonors;
   };
 
@@ -36,6 +42,7 @@ module.exports = (() => {
     getDonorZipcode,
     registeredDonors,
     setDonors,
+    getDonors,
     init
   };
 })();

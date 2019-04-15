@@ -14,7 +14,7 @@ const registerDonors = () => {
         const isString = RegExp(/^[a-zA-Z ]+$/).test(value);
 
         if (value === '' || isString === false) {
-          return chalk.red(content.nameErr);
+          return chalk.red(content.registerUserQuestions[0].nameErr);
         } else {
           return true;
         }
@@ -28,7 +28,7 @@ const registerDonors = () => {
         const isString = RegExp(/^[a-zA-Z ]+$/).test(value);
 
         if (value === '' || isString === false) {
-          return chalk.red(content.cityErr);
+          return chalk.red(content.registerUserQuestions[0].cityErr);
         } else {
           return true;
         }
@@ -42,7 +42,7 @@ const registerDonors = () => {
         const isZipCode = RegExp(/^[0-9]{6}$/).test(value);
 
         if (value === '' || isZipCode === false) {
-          return chalk.red(content.zipcodeErr);
+          return chalk.red(content.registerUserQuestions[0].zipcodeErr);
         } else {
           return true;
         }
