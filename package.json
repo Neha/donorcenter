@@ -13,7 +13,7 @@
   "author": "Neha Sharma",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cfonts": "^2.4.2",
     "chalk": "^2.4.2",
     "cli-table": "^0.3.1",
